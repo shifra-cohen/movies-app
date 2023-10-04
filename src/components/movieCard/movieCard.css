@@ -1,0 +1,24 @@
+.movieCard img {
+  height: 30vh;
+  width: 20vw;
+  max-width: 150px;
+  min-width: 130px;
+}
+
+.movieCard {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.movieCard img:hover {
+  cursor: pointer;
+}
+
+@media screen and (width > 850px) {
+  .movieCard {
+    width: 30%;
+  }
+}
