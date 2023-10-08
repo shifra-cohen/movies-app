@@ -8,12 +8,18 @@
   align-items: center;
 }
 
+.header {
+  margin-top: 3rem;
+}
+
 .pagination_footer {
-  width: 15%;
+  width: 20%;
   height: 2rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
+  bottom: 1rem;
 }
 
 .pagination_footer button {
@@ -27,7 +33,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Codec cold", sans-serif;
-  font-size: 10px;
+  font-size: 1rem;
   font-weight: 700;
   height: 100%;
   justify-content: center;
@@ -45,39 +51,33 @@
 }
 
 .movie-details_img {
-  height: 85vh;
-  width: 30%;
+  height: 30vh;
+  width: 14vw;
+  border-radius: 15px;
+  min-height: 10rem;
+  min-width: 7rem;
+  max-width: 8.5rem;
+  max-height: 12rem;
 }
 
 .movie-details_container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.movie-details_container > * {
-  margin-top: 1rem;
-}
-
 @media screen and (width < 800px) {
-  .movie-details_container {
-    flex-direction: column;
-    justify-content: center;
-  }
-
   .movie-details_info {
     width: 70%;
   }
 
-  .movie-details_img {
-    width: 45%;
-    margin-top: 1rem;
-  }
-
   .pagination_footer {
-    width: 25%;
+    width: 50%;
   }
 }
 
@@ -91,6 +91,8 @@
 
 .movie-details_info p {
   font-size: 0.9rem;
+  margin: 0.5rem;
+  text-shadow: 0 0 19px black;
 }
 
 .save-btn {
@@ -118,4 +120,70 @@
   text-decoration: none;
   text-transform: uppercase;
   user-select: none;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.movie-details_shadow {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: rgb(0 0 0 / 85%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  height: 7vh;
+  max-height: 4rem;
+  width: max-content;
+  padding: 0 0.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #3d3c3c;
+  box-shadow: 0px 0px 40px #18181816, 0px 0px 40px #3d3d3d10;
+  cursor: pointer;
+  position: relative;
+  top: 10vh;
+}
+
+.heart {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+svg {
+  height: 6vh;
+  max-height: 3rem;
+  fill: rgb(168, 170, 181);
+  transition: all 500ms ease-in-out;
+}
+
+svg:nth-child(2) {
+  position: absolute;
+  z-index: 2;
+}
+
+input {
+  display: none;
+}
+
+input:checked + .heart svg {
+  fill: #c850c0;
+}
+
+input:checked + .heart svg:nth-child(2) {
+  filter: opacity(1);
+  animation: heart 0.3s linear forwards;
+}
+
+@keyframes heart {
+  to {
+    transform: scale(1.4);
+    filter: opacity(0);
+    fill: #c850c0;
+  }
 }

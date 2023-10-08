@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { movie } from "../../constants/constants";
@@ -14,10 +13,8 @@ const FavoriteMovies = ({ onMovieClick }: favoriteMoviesProps) => {
 
   return (
     <div className="listContainer">
-      <h2>Favorite Movies</h2>
-      <div>
-        <CardList movies={favoriteMovies} onMovieClick={onMovieClick} />
-      </div>
+      <h2 className="header">My favorites</h2>
+      <CardList movies={favoriteMovies} onMovieClick={onMovieClick} />
     </div>
   );
 };
