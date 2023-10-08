@@ -11,4 +11,9 @@ export interface movie {
   budget: number;
   runtime: number;
   revenue: number;
+  adult: boolean;
+  genre_ids: number[];
+  original_language: string;
+  release_date: string;
+  video: boolean;
 }

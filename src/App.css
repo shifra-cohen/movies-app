@@ -4,71 +4,106 @@
   height: fit-content;
   background-color: rgba(6, 6, 20, 0.863);
   color: rgb(202, 203, 203);
+  scroll-behavior: smooth;
 }
 
-.buttons button {
-  align-items: center;
-  background-image: linear-gradient(135deg, #2d2249d8 40%, #181860bd);
+.button:active {
+  outline: 0;
+}
+
+.button:hover {
+  outline: 0;
+}
+
+.button span {
+  transition: all 200ms;
+}
+
+.button:hover span {
+  transform: scale(0.95);
+  opacity: 0.75;
+}
+
+.button {
+  position: absolute;
+  top: -1%;
+  z-index: 2;
   border: 0;
   border-radius: 10px;
-  box-sizing: border-box;
   color: rgb(202, 203, 203);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  font-family: "Codec cold", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  height: 100%;
-  justify-content: center;
-  letter-spacing: 0.4px;
-  line-height: 1;
-  max-width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 1px;
+  font-size: 0.8rem;
+  height: 5%;
+  width: fit-content;
+  padding: 3px 0.7vw 0.2vh 0.7vw;
   text-decoration: none;
   text-transform: uppercase;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-
-.buttons button:active {
-  outline: 0;
-}
-
-.buttons button:hover {
-  outline: 0;
-}
-
-.buttons button span {
-  transition: all 200ms;
-}
-
-.buttons button:hover span {
-  transform: scale(0.9);
-  opacity: 0.75;
-}
-
-@media screen and (max-width: 991px) {
-  .buttons button {
-    font-size: 10px;
-  }
-
-  .buttons button span {
-    line-height: 50px;
-  }
-}
-
-.buttons {
   display: flex;
-  width: 100%;
-  height: 5vh;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
+  z-index: 1;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  filter: brightness(120%);
 }
 
-.buttons button {
-  margin: 0.5%;
+.button:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 70%;
+  top: 0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  filter: blur(20px);
+}
+
+.button span {
+  background-color: #0b090a;
+  padding: 0% 0.5vw;
+  width: 100%;
+  display: flex;
+  height: 99%;
+  color: white;
+  border-radius: 9px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 0.5vw;
+}
+
+.popular_btn {
+  left: calc(47vw - 4.5rem);
+}
+
+.now-playing_btn {
+  left: 49vw;
+}
+
+.favorites {
+  position: absolute;
+  left: 1rem;
+  top: 1%;
+}
+
+.favorites svg {
+  height: 5vh;
+}
+
+svg:hover {
+  cursor: pointer;
 }

@@ -38,9 +38,13 @@ const PopularMovies = ({ onMovieClick }: popularMoviesProps) => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   return (
     <div className="listContainer">
-      <h2>Popular Movies</h2>
+      <h2 className="header">Popular Movies</h2>
       <CardList movies={popularMovies} onMovieClick={onMovieClick} />
       <div className="pagination_footer">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
